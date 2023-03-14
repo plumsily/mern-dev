@@ -7,7 +7,7 @@ const connectDB = require("./config/db");
 const port = process.env.PORT || 5000;
 
 //Connect to MongoDB
-connectDB();
+// connectDB(); //Ensure connection is made before listening in a serverless environment
 
 const app = express();
 
@@ -37,6 +37,11 @@ if (process.env.NODE_ENV === "production") {
 //Use custom error handling rather than default express handler
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Server running on part ${port}`);
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log(`Server running on part ${port}`);
+  });
 });
+// app.listen(port, () => {
+//   console.log(`Server running on part ${port}`);
+// });
