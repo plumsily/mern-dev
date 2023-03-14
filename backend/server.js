@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Routes
 app.use("/api/todos", require("./routes/todoRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 //Use custom error handling rather than default express handler
 app.use(errorHandler);
