@@ -28,6 +28,25 @@ export const createTodo = createAsyncThunk(
   }
 );
 
+//Update todo completion
+export const updateTodo = createAsyncThunk(
+  "todos/update",
+  async (todoData, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await todoService.updateTodo(todoData, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 //Get user todos
 export const getTodos = createAsyncThunk(
   "todos/getAll",
@@ -111,6 +130,23 @@ export const todoSlice = createSlice({
         );
       })
       .addCase(deleteTodo.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(updateTodo.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateTodo.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+
+        let { todos } = state;
+        state.todos = todos.map((todo) =>
+          todo._id === action.payload._id ? action.payload : todo
+        );
+      })
+      .addCase(updateTodo.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

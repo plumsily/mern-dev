@@ -51,11 +51,17 @@ const updateTodo = asyncHandler(async (req, res) => {
     throw new Error("User not authorized");
   }
 
-  const updatedTodo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  // const updatedTodo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
+  //   new: true,
+  // });
 
-  res.status(200).json(updateTodo);
+  const updatedTodo = await Todo.findOneAndUpdate(
+    { _id: req.params.id },
+    [{ $set: { completed: { $eq: [false, "$completed"] } } }],
+    { new: true }
+  );
+
+  res.status(200).json(updatedTodo);
 });
 
 // @desc Delete todos
