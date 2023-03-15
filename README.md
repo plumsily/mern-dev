@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/plumsily/mern-todo">
+  <a href="https://todos.cyclic.app/">
     <img src="frontend/public/android-chrome-192x192.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -41,7 +41,7 @@
     <a href="https://github.com/plumsily/mern-todo"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://todos.cyclic.app/">View Demo</a>
     ·
     <a href="https://github.com/plumsily/mern-todo/issues">Report Bug</a>
     ·
@@ -67,7 +67,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <!--<li><a href="#roadmap">Roadmap</a></li>-->
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -79,22 +79,21 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Todos App Screen Shot][product-screenshot]](frontend/public/android-chrome-192x192.png)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `plumsily`, `mern-todo`, `plumsily`, `justinsangwonlee`, `gmail`, `plumsylee`, `Full-Stack Todo App`, `A full-stack project using MERN - MongoDB, Express, React, Node.`
+This project provides a simple and lightweight service to store tasks in a list on a MongoDB databse. User authentication is enabled using JSON Web Tokens, with user protected routes on the backend. This app contains both the backend, built with Express, and the frontend, built with Create-React-App and the Redux add-on. The server for this app is hosted on Cyclic, where all the static files and API endpoints are served.  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-- [![Next][next.js]][next-url]
 - [![React][react.js]][react-url]
-- [![Vue][vue.js]][vue-url]
-- [![Angular][angular.io]][angular-url]
-- [![Svelte][svelte.dev]][svelte-url]
-- [![Laravel][laravel.com]][laravel-url]
-- [![Bootstrap][bootstrap.com]][bootstrap-url]
-- [![JQuery][jquery.com]][jquery-url]
+- [![Redux][redux]][redux-url]
+- [![React Router][react-router]][react-router-url]
+- [![node.js]][node-url]
+- [![express]][express-url]
+- [![mongodb]][mongodb-url]
+- [![jwt]][jwt-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,48 +101,43 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/plumsily/mern-todo.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. Create a .env file
+4. Enter your API keys and local environment variables in `.env`
    ```js
-   const API_KEY = "ENTER YOUR API";
+   NODE_ENV = development
+   PORT = 5000
+   MONGO_URI = ""
+   JWT_SECRET = ""
    ```
-
+5. Run the dev server from the root
+   ```sh
+   npm run dev
+   ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+As a registered user, you can add, complete, and delete tasks on your list. Completed todos will be grayed out until toggled incomplete or deleted. Using JWT and localStorage, your session will be preserved until you manually logout. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
+<!--
 ## Roadmap
 
 - [ ] Feature 1
@@ -154,7 +148,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/plumsily/mern-todo/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 <!-- CONTRIBUTING -->
 
 ## Contributing
@@ -184,7 +178,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@plumsily](https://twitter.com/plumsily) - plumsylee@gmail.com
+Justin Lee - [@plumsily](https://twitter.com/plumsily) - plumsylee@gmail.com
 
 Project Link: [https://github.com/plumsily/mern-todo](https://github.com/plumsily/mern-todo)
 
@@ -194,9 +188,7 @@ Project Link: [https://github.com/plumsily/mern-todo](https://github.com/plumsil
 
 ## Acknowledgments
 
-- []()
-- []()
-- []()
+- []() Traversy Media
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -215,9 +207,21 @@ Project Link: [https://github.com/plumsily/mern-todo](https://github.com/plumsil
 [license-url]: https://github.com/plumsily/mern-todo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/justinsangwonlee
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: frontend/public/android-chrome-192x192.png
 [next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [next-url]: https://nextjs.org/
+[node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[node-url]: https://nodejs.org/en/
+[express]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[express-url]: https://expressjs.com/
+[redux]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
+[redux-url]: https://redux.js.org/
+[react-router]: 	https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[react-router-url]: https://reactjs.org/
+[mongodb]: 		https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
+[mongodb-url]: https://www.mongodb.com/
+[jwt]: 		https://img.shields.io/badge/json%20web%20tokens-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink
+[jwt-url]: https://jwt.io/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
@@ -232,3 +236,4 @@ Project Link: [https://github.com/plumsily/mern-todo](https://github.com/plumsil
 [bootstrap-url]: https://getbootstrap.com
 [jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [jquery-url]: https://jquery.com
+
