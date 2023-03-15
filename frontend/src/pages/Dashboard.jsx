@@ -16,15 +16,15 @@ function Dashboard() {
   );
 
   useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      dispatch(getTodos());
+    }
+
     if (isError) {
       console.log(message);
     }
-
-    if (!user) {
-      navigate("/login");
-    }
-
-    dispatch(getTodos());
 
     return () => {
       dispatch(reset());

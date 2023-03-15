@@ -117,7 +117,7 @@ export const todoSlice = createSlice({
       .addCase(getTodos.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.message = action.payload;
+        state.message = action.payload + "testy";
       })
       .addCase(deleteTodo.pending, (state) => {
         state.isLoading = true;
