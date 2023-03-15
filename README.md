@@ -79,7 +79,7 @@
 
 ## About The Project
 
-[![Todos App Screen Shot][product-screenshot]](frontend/public/android-chrome-192x192.png)
+[![Todos App Screen Shot][product-screenshot]]()
 
 This project provides a simple and lightweight service to store tasks in a list on a MongoDB databse. User authentication is enabled using JSON Web Tokens, with user protected routes on the backend. This app contains both the backend, built with Express, and the frontend, built with Create-React-App and the Redux add-on. The server for this app is hosted on Cyclic, where all the static files and API endpoints are served.  
 
@@ -207,7 +207,7 @@ Project Link: [https://github.com/plumsily/mern-todo](https://github.com/plumsil
 [license-url]: https://github.com/plumsily/mern-todo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/justinsangwonlee
-[product-screenshot]: frontend/public/android-chrome-192x192.png
+[product-screenshot]: frontend/public/screenshot1.png
 [next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [next-url]: https://nextjs.org/
 [node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
