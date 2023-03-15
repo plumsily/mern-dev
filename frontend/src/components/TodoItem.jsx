@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteTodo } from "../features/todos/todoSlice";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaCheck } from "react-icons/fa";
 
 function TodoItem({ todo }) {
   const dispatch = useDispatch();
@@ -11,6 +11,9 @@ function TodoItem({ todo }) {
       <h2>{todo.text}</h2>
       <button className="close" onClick={() => dispatch(deleteTodo(todo._id))}>
         <FaTrash />
+      </button>
+      <button className="check" onClick={() => dispatch(deleteTodo(todo._id))}>
+        <FaCheck />
       </button>
     </div>
   );
