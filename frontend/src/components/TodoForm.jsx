@@ -18,11 +18,12 @@ function TodoForm() {
     <section className="form">
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="text">Todo</label>
+          <label htmlFor="text">New Todo</label>
           <input
             type="text"
             name="text"
             id="text"
+            placeholder="What do you need to complete?"
             value={text}
             onChange={(e) => {
               setText(e.target.value);

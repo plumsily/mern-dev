@@ -39,10 +39,8 @@ function Dashboard() {
     <>
       <section className="heading">
         <h1>Welcome {user && user.name}</h1>
-        <p>Todos List</p>
+        <p>Here's what's on your todo list:</p>
       </section>
-
-      <TodoForm />
 
       <section className="content">
         {todos.length > 0 ? (
@@ -55,6 +53,8 @@ function Dashboard() {
           <h3>You don't have any todo's to show</h3>
         )}
       </section>
+
+      <TodoForm />
     </>
   );
 }

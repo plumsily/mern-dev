@@ -7,7 +7,9 @@ const User = require("../models/UserModel");
 // @route GET /api/todos
 // @access Private
 const getTodos = asyncHandler(async (req, res) => {
-  const todos = await Todo.find({ user: req.user.id });
+  const todos = await Todo.find({ user: req.user.id }).sort({
+    completed: 1,
+  });
   res.status(200).json(todos);
 });
 
